@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      </head>
+      <body>
+        <div class="container">
+          <h1>Últimas noticias</h1>
+          <form action="" method="post">
+            <div class="form-group">
+              <label for="filtro">Filtrar noticias:</label>
+              <input type="text" class="form-control" id="filtro" name="filtro">
+              <button type="submit" class="btn btn-primary">Filtrar</button>
+            </div>
+          </form>
+          {% for noticia in blocks_news %}
+            <div class="card">
+              <div class="card-header">{{ noticia.medio }}</div>
+              <div class="card-body">
+                <h2 class="card-title">{{ noticia.titulo }}</h2>
+                <a href="{{ noticia.link }}" target="_blank" class="card-link">{{ noticia.link }}</a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </body>
+</html>
